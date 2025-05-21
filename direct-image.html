@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://clipground.com data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self';">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
+<meta name="robots" content="noindex, noarchive, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Direct Image Display</title>
+<script>if(window.self !== window.top) { window.top.location.href = window.self.location.href; }</script>
+
+<script>
+(function() {
+    function obfuscateHTML() {
+        const originalHTML = document.documentElement.innerHTML;
+        
+
+        function generateEncryptedContent(length) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/~`';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+        
+
+        function createFakeHTML() {
+            let fakeHTML = '<!-- SECURITY SYSTEM ACTIVATION CODE: XJP-7890-ABCD-5678 -->\n';
+            fakeHTML += '<!-- ENCRYPTED CONTENT BELOW - UNAUTHORIZED ACCESS DETECTED -->\n';
+            
+
+            for (let i = 0; i < 20; i++) {
+                fakeHTML += `<!-- ${generateEncryptedContent(50)} -->\n`;
+                fakeHTML += `<div class="${generateEncryptedContent(8)}" id="${generateEncryptedContent(6)}">\n`;
+                fakeHTML += `  <script>var ${generateEncryptedContent(5)}="${generateEncryptedContent(20)}"</` + `script>\n`;
+                fakeHTML += `  <${generateEncryptedContent(4)} ${generateEncryptedContent(3)}="${generateEncryptedContent(10)}">${generateEncryptedContent(30)}</div>\n`;
+            }
+            
+            fakeHTML += '<!-- SECURITY BREACH DETECTED - IP LOGGED: ' + new Date().toISOString() + ' -->';
+            return fakeHTML;
+        }
+        
+
+        document.documentElement.innerHTML = createFakeHTML();
+        
+
+        setTimeout(() => {
+            document.documentElement.innerHTML = originalHTML;
+            
+
+            obfuscateHTML();
+        }, 500);
+    }
+    
+
+    let devtoolsOpen = false;
+    
+
+    function isDevToolsOpenBySize() {
+        const widthThreshold = window.outerWidth - window.innerWidth > 160;
+        const heightThreshold = window.outerHeight - window.innerHeight > 160;
+        return widthThreshold || heightThreshold;
+    }
+    
+
+    function isDevToolsOpenByOrientation() {
+        const isHorizontal = window.innerWidth < window.innerHeight;
+        const isVertical = window.outerWidth - window.innerWidth > 100;
+        return isHorizontal && isVertical;
+    }
+    
+
+    const originalClear = console.clear;
+    console.clear = function() {
+        devtoolsOpen = true;
+        obfuscateHTML();
+        originalClear.call(console);
+    };
+    
+
+    function detectDebugger() {
+        const startTime = new Date();
+        debugger;
+        const endTime = new Date();
+        if (endTime - startTime > 100) {
+            devtoolsOpen = true;
+            obfuscateHTML();
+        }
+    }
+    
+
+    setInterval(function() {
+        if (isDevToolsOpenBySize() || isDevToolsOpenByOrientation()) {
+            if (!devtoolsOpen) {
+                devtoolsOpen = true;
+                obfuscateHTML();
+            }
+        } else {
+            devtoolsOpen = false;
+        }
+        
+        detectDebugger();
+    }, 1000);
+    
+
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.key === 's' || e.keyCode === 83)) {
+            e.preventDefault();
+            obfuscateHTML();
+            return false;
+        }
+    });
+})();
+</script>
+<style>body{margin:0;padding:0;background-color:#0c0c0c;display:flex;justify-content:center;align-items:center;min-height:100vh;font-family:Arial,sans-serif}.image-container{width:608px;height:655px;border:3px solid #ff0000;border-radius:10px;overflow:hidden;display:flex;justify-content:center;align-items:center;background-color:rgba(0,0,0,0.7);box-shadow:0 0 40px rgba(255,0,0,0.5);transition:all 0.3s ease;position:relative}.image-container:hover{box-shadow:0 0 60px rgba(255,0,0,0.8);transform:scale(1.02)}.direct-image{max-width:100%;max-height:100%;object-fit:contain;display:block;transition:transform 0.3s ease;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}.direct-image:hover{transform:scale(1.05)}.watermark{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;pointer-events:none;opacity:0.2;font-size:4em;color:#ff0000;transform:rotate(-45deg);z-index:10;text-shadow:0 0 10px #000;font-weight:bold}@media print{body * {visibility:hidden;display:none!important}}</style>
+
+<script src="anti-copier.js"></script>
+</head>
+<body>
+<div class="image-container">
+<div class="watermark">PROTECTED</div>
+<img src="https://clipground.com/images/angry-anime-clipart.jpg" alt="Angry Anime Girl" class="direct-image" oncontextmenu="return false;">
+</div>
+<script>
+
+let originalInnerHTML = Object.getOwnPropertyDescriptor(Element.prototype, 'innerHTML');
+Object.defineProperty(Element.prototype, 'innerHTML', {
+    get() {
+
+        if (this === document.documentElement || this === document.body) {
+            console.log("Blocked access to innerHTML of document");
+            return "<!-- Content protected by security system -->";
+        }
+        return originalInnerHTML.get.call(this);
+    },
+    set(value) {
+        return originalInnerHTML.set.call(this, value);
+    }
+});
+
+// Prevent copy-paste operations
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+    console.log("Copy operation blocked");
+    return false;
+});
+
+document.addEventListener('paste', function(e) {
+    e.preventDefault();
+    console.log("Paste operation blocked");
+    return false;
+});
+
+document.addEventListener('cut', function(e) {
+    e.preventDefault();
+    console.log("Cut operation blocked");
+    return false;
+});
+
+
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+
+document.querySelector('.direct-image').addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+
+function detectWebsiteCopiersAndScrapers() {
+
+    const userAgent = navigator.userAgent.toLowerCase();
+    const blockedAgents = [
+        'httrack', 'wget', 'teleport', 'webcopier', 'webripper', 
+        'websitecopier', 'webstripper', 'sitesucker', 'superbot',
+        'webzip', 'webdownloader', 'webreaper', 'webmirror', 'webcloner',
+        'aspirateur', 'offline', 'metaproducts', 'nicerspro', 'webscrapbook'
+    ];
+    
+
+    const isBlockedAgent = blockedAgents.some(agent => userAgent.includes(agent));
+    
+    if (isBlockedAgent) {
+
+        window.location.href = 'blocked.html?reason=websitecopier';
+        return true;
+    }
+    
+    return false;
+}
+
+
+function detectWebView() {
+    const userAgent = navigator.userAgent;
+    if (userAgent.includes('WebView') || 
+        (userAgent.includes('Android') && userAgent.includes('wv'))) {
+        window.location.href = 'blocked.html?reason=webview';
+        return true;
+    }
+    return false;
+}
+
+
+window.addEventListener('DOMContentLoaded', function() {
+    detectWebsiteCopiersAndScrapers();
+    detectWebView();
+});
+</script>
+</body></html>
